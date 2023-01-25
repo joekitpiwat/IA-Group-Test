@@ -9,6 +9,8 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CitizenidCheckComponent } from './components/citizenid-check/citizenid-check.component';
 import { ArticleFiveComponent } from './components/article-five/article-five.component';
+import { DigitOnlyDirective } from './directives/digit-only.directive';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,14 @@ import { ArticleFiveComponent } from './components/article-five/article-five.com
     TestListComponent,
     PostListComponent,
     CitizenidCheckComponent,
-    ArticleFiveComponent
+    ArticleFiveComponent,
+    DigitOnlyDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

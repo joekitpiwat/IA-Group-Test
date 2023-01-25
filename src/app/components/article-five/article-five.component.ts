@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article-five.component.scss']
 })
 export class ArticleFiveComponent implements OnInit {
-
+  arr: string[] = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -32,11 +32,25 @@ export class ArticleFiveComponent implements OnInit {
     //   i = i + 2;
     // }
     const n = 7;
-    let c = 1;
+    // let c = 1;
     
-    // Array.from(Array(~-n / 2 | 0), (_, i) => " ".repeat(i + 1) + "*".repeat(n + ~i * 2))
-    //   .reduce((a, c) => [c, ...a, c], ["*".repeat(n)])
-    //   .forEach(l => console.log(l))
+    Array.from(Array(~-n / 2 | 0), (_, i) => " ".repeat(i + 1) + "*".repeat(n + ~i * 2))
+      .reduce((a, c) => [c, ...a, c], ["*".repeat(n)])
+      .forEach(l => console.log(l))
+
+    //   this.arr = this.Test();
+
+  }
+
+
+
+ // pass number as row of pyramid you want
+
+
+  Test() {
+    const n = 7;
+   return Array.from(Array(~-n / 2 | 0), (_, i) => " ".repeat(i + 1) + "*".repeat(n + ~i * 2))
+    .reduce((a, c) => [c, ...a, c], ["*".repeat(n)])
   }
 
 }

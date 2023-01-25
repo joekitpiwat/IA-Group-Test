@@ -10,3 +10,9 @@ export interface Posts {
 export const HEROS = [
     "Dr Nice","necromancer","Bombasto","Celeritas","Magneta","RubberMan","Dynama","Dr IQ","Magma","Tornado"
 ]
+
+export interface CitizenidResponse {
+    success: boolean;
+    error_cde: string;
+    error_msg: string;
+}
