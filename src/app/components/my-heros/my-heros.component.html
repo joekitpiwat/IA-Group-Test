@@ -1,0 +1,11 @@
+<div>
+    <h2>My Heros</h2>
+    <ul *ngFor="let hero of heros; let i = index;">
+        <li (click)="selectHero(hero)">{{i + 11}} {{hero}}</li>
+    </ul> 
+</div>
+  
+
+
+
+<span>My Hero is {{heroSelected}}</span>

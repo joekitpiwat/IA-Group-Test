@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HEROS, Heros } from '../models/heros';
+import { HEROS } from '../../models/model';
 
 @Component({
   selector: 'app-my-heros',
@@ -8,13 +8,12 @@ import { HEROS, Heros } from '../models/heros';
 })
 export class MyHerosComponent implements OnInit {
 
-  heros: Heros[] = HEROS;
+  heros: string[] = HEROS;
   heroSelected: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.heros);
   }
 
 

@@ -1,19 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MyHerosComponent } from './my-heros/my-heros.component';
-import { TestListComponent } from './test-list/test-list.component';
+import { ArticleFiveComponent } from './components/article-five/article-five.component';
+import { MyHerosComponent } from './components/my-heros/my-heros.component';
+import { PostListComponent } from './components/post-list/post-list.component';
+import { TestListComponent } from './components/test-list/test-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '',
-    pathMatch: 'full',
     component: TestListComponent
   },
   {
     path: 'hero',
     component: MyHerosComponent
   },
+  {
+    path: 'posts',
+    component: PostListComponent
+  },
+  {
+    path: 'article-five',
+    component: ArticleFiveComponent
+  }
 ];
 
 @NgModule({
