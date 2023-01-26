@@ -16,24 +16,21 @@ export class CitizenidCheckComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      citizen_id: ['5997624967173', Validators.minLength(12)]
+      citizen_id: ['', Validators.minLength(12)]
     })
   }
 
 
-  get f() {
-    return this.form.controls;
-  }
 
   checkCitizenId() {
     if (this.form.invalid) {
       return alert('กรุณากรอกให้ครบ 13 หลัก');
     }
 
-    const citizen_id = +this.form.get('citizen_id').value;
+    const citizen_id = this.form.get('citizen_id').value;
  
     if (citizen_id) {
-      let arr = Array.from(String(citizen_id), num => Number(num)).slice(0 , -1);
+      let arr = Array.from(String(citizen_id), num => +num).slice(0 , -1);
       let c = 0;
        for(let i = 13; i > 1; i--){
         c++
@@ -43,15 +40,28 @@ export class CitizenidCheckComponent implements OnInit {
       const mod = total % 11;
       const digit = 11 - mod;
       const dStr = digit.toString();
-      const result = dStr.length > 2 ? dStr.substring(0 , 1) : digit;
-      console.log(result);
-      // this.citizenResult = {
-      //   success: boolean;
-      //   error_cde: string;
-      //   error_msg: string;
-      // }
+      const result = dStr.length > 1 ? dStr.substring(1 , 2) : dStr;
+      const lastChar = citizen_id.substring(12, 13)
+      this.citizenResult = {
+        success: result === lastChar ? true : false,
+        error_cde: result === lastChar ? '200' : '001',
+        error_msg: result === lastChar ? '' : 'citizen_id invalid'
+      }
+    } else {
+      this.citizenResult = {
+        success: false,
+        error_cde: '001',
+        error_msg: 'citizen_id invalid'
+      }
     }
   }
 
+
+
+
+  
+  get f() {
+    return this.form.controls;
+  }
 
 }

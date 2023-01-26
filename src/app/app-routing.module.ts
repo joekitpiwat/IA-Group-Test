@@ -9,30 +9,31 @@ import { TestListComponent } from './components/test-list/test-list.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '',
-    pathMatch: 'full',
-    component: TestListComponent
+    component: TestListComponent,
+    children: [
+      {
+        path: 'citizendid-check',
+        component: CitizenidCheckComponent
+      },
+      {
+        path: 'article-five',
+        component: ArticleFiveComponent
+      },
+      {
+        path: 'hero',
+        component: MyHerosComponent
+      },
+    ]
   },
   // {
   //   path: '**', pathMatch: 'full',
   //   component: TestListComponent
   // },
   {
-    path: 'hero',
-    component: MyHerosComponent
-  },
-  {
     path: 'posts',
     component: PostListComponent
   },
-  {
-    path: 'citizendid-check',
-    component: CitizenidCheckComponent
-  },
-  {
-    path: 'article-five',
-    component: ArticleFiveComponent
-  }
+
 ];
 
 @NgModule({

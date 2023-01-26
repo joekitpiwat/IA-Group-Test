@@ -1,11 +1,12 @@
-<div>
+<div class="warp">
     <h2>My Heros</h2>
     <ul *ngFor="let hero of heros; let i = index;">
-        <li (click)="selectHero(hero)">{{i + 11}} {{hero}}</li>
+        <li (click)="selectHero(hero)" [ngClass]="{'selected' : hero === heroSelected}">{{i + 11}} {{hero}}</li>
     </ul> 
+    <span>My Hero is {{heroSelected}}</span>
+
 </div>
   
 
 
 
-<span>My Hero is {{heroSelected}}</span>
