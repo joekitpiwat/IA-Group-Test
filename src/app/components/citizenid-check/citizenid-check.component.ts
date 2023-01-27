@@ -41,7 +41,8 @@ export class CitizenidCheckComponent implements OnInit {
       const digit = 11 - mod;
       const dStr = digit.toString();
       const result = dStr.length > 1 ? dStr.substring(1 , 2) : dStr;
-      const lastChar = citizen_id.substring(12, 13)
+      console.log(result);
+      const lastChar = citizen_id.substring(12, 13);
       this.citizenResult = {
         success: result === lastChar ? true : false,
         error_cde: result === lastChar ? '200' : '001',
@@ -51,7 +52,7 @@ export class CitizenidCheckComponent implements OnInit {
       this.citizenResult = {
         success: false,
         error_cde: '001',
-        error_msg: 'citizen_id invalid'
+        error_msg: 'citizen_id require'
       }
     }
   }

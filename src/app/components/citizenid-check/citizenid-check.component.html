@@ -1,19 +1,19 @@
-<div *ngIf="form" [formGroup]="form">
-
+<div *ngIf="form" >
+    <form [formGroup]="form" (ngSubmit)="checkCitizenId()">
         <div style="display: flex; justify-content: center;">
-            <label >Citizen ID : </label>
-            <input type="text" maxlength="13" formControlName="citizen_id" digitOnly>
-            <button (click)="checkCitizenId()">check</button>
+            <label for="citizen_id">Citizen ID : </label>
+            <input id="citizen_id" type="text" maxlength="13" formControlName="citizen_id" digitOnly>
+            <button type="submit">check</button>
 
             
         </div>
-      
-        <div style="text-align: center;">
-            <span *ngIf="f.citizen_id?.invalid" style="font-size: 12px; color: red;">*กรุณากรอกให้ครบ 13 หลัก</span>
+    </form>
+        <div>
+            <span *ngIf="f.citizen_id?.invalid" class="msg-err">*กรุณากรอกให้ครบ 13 หลัก</span>
         </div>
          <div style="text-align: center; padding-top: 20px;">
             {{citizenResult | json}}
         </div>
-     
+   
 </div>
 

@@ -1,0 +1,27 @@
+<div class="container">
+    <form class="box" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row" style="padding-bottom: 10px;">
+            <label for="base">Base </label>
+            <input id="base" type="number"  formControlName="base">
+            <span *ngIf="f.base?.invalid" class="msg-err">*กรุณากรอก</span>
+        </div>
+    
+        <div class="row" style="padding-bottom: 10px;">
+            <label for="height">Height </label>
+            <input id="height" type="number" formControlName="height">
+            <span *ngIf="f.height?.invalid" class="msg-err">*กรุณากรอก</span>
+        </div>
+
+        <div class="row">
+            <label>Area : {{area | number: '1.2-2'}}</label> 
+
+        </div>
+
+        <div class="submit">    
+            <button type="submit">submit</button>
+        </div>
+    </form>
+</div>
+
+
+

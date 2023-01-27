@@ -5,6 +5,7 @@ import { CitizenidCheckComponent } from './components/citizenid-check/citizenid-
 import { MyHerosComponent } from './components/my-heros/my-heros.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { TestListComponent } from './components/test-list/test-list.component';
+import { TriangleComponent } from './components/triangle/triangle.component';
 
 const routes: Routes = [
   {
@@ -23,12 +24,12 @@ const routes: Routes = [
         path: 'hero',
         component: MyHerosComponent
       },
+      {
+        path: 'triangle',
+        component: TriangleComponent
+      },
     ]
   },
-  // {
-  //   path: '**', pathMatch: 'full',
-  //   component: TestListComponent
-  // },
   {
     path: 'posts',
     component: PostListComponent

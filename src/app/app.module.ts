@@ -11,6 +11,7 @@ import { CitizenidCheckComponent } from './components/citizenid-check/citizenid-
 import { ArticleFiveComponent } from './components/article-five/article-five.component';
 import { DigitOnlyDirective } from './directives/digit-only.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TriangleComponent } from './components/triangle/triangle.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PostListComponent,
     CitizenidCheckComponent,
     ArticleFiveComponent,
-    DigitOnlyDirective
+    DigitOnlyDirective,
+    TriangleComponent
   ],
   imports: [
     BrowserModule,

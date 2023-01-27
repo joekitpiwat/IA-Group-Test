@@ -7,55 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleFiveComponent implements OnInit {
   arr: string[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
-    // const l = 11;
-    // let space = ' ';
-    // let star = '*';
-    // let i = 1;
-    // let k;
-    // let n = 0;
+    let midRow = 3;
+    let row = 1;
+    for (let i = midRow; i > 0; i--) {
+      const text_row = " ".repeat(midRow + i) + row + "*".repeat((row - 1) * 2) + row;
+      this.arr.push(text_row);
+      row++;
+    }
+    for (let i = 0; i <= midRow; i++) {
+      const text_row = " ".repeat(midRow + i) + row + "*".repeat((row - 1) * 2) + row;
+      this.arr.push(text_row);
+      row--;
+    }
 
-    // while (i <= l) {
-    //   k = (l - i) / 2;
-    //   console.log(space.repeat(k) + star.repeat(i));
-    //   i = i + 2;
-    // }
-
-    // while (i >= l) {
-    //   k = (i - l) / 2;
-    //   n = i - (4 * k);
-    //   if (n > 0) {
-    //     console.log(space.repeat(k) + star.repeat(n));
-    //   } else { break; }
-    //   i = i + 2;
-    // }
-
-    const n = 7;
-    this.arr = Array.from(Array(~-n / 2 | 0), (_, i) => " ".repeat(i + 1) + "*".repeat(n + ~i * 2))
-    .reduce((a, c) => [c, ...a, c], ["*".repeat(n)])
-    // .forEach(l => console.log(l))
-
-    // const n = 7;
-    // Array.from(Array(~-n / 2 | 0), (_, i) => " ".repeat(i + 1) + "*".repeat(n + ~i * 2))
-    //   .reduce((a, c) => [c, ...a, c], ["*".repeat(n)])
-    //   .forEach(l => console.log(l))
-
-
-
+    console.log(this.arr.forEach(x => console.log(x)));
   }
 
 
 
-
- // pass number as row of pyramid you want
-
-
-  Test() {
-    const n = 7;
-   return Array.from(Array(~-n / 2 | 0), (_, i) => " ".repeat(i + 1) + "*".repeat(n + ~i * 2))
-    .reduce((a, c) => [c, ...a, c], ["*".repeat(n)])
-  }
 
 }

@@ -7,6 +7,17 @@ export interface Posts {
     body: string;
 }
 
+export interface ResponseApi {
+    message: string;
+    area: number;
+    status: boolean;
+}
+
+export interface Triangle {
+    base: number;
+    height: number;
+}
+
 export const HEROS = [
     "Dr Nice","necromancer","Bombasto","Celeritas","Magneta","RubberMan","Dynama","Dr IQ","Magma","Tornado"
 ]

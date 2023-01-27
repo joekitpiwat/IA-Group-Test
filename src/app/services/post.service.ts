@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, OnInit } from "@angular/core";
-import { Posts } from "../models/model";
+import { Posts, ResponseApi, Triangle } from "../models/model";
 
 @Injectable({providedIn: 'root'})
 
@@ -19,6 +19,17 @@ export class PostService {
         }catch(err){
             console.log(err);
             throw new Error('Cannot get Posts');
+        }
+    }
+
+    async CalTriangle(body: Triangle)  {
+        try{
+            const url = 'http://localhost:3000';
+            const res = await this.http.post<ResponseApi>(url, body).toPromise();
+            return res;
+        }catch(err){
+            console.log(err);
+            throw new Error('Cannot get Area');
         }
     }
 }

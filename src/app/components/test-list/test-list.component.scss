@@ -1,7 +1,13 @@
 li {
     cursor: pointer;
+    width: 20%;
 }
 
 .active-link{
     color: red;
+}
+
+.container {
+    max-width: 300px;
+    margin: auto;
 }
