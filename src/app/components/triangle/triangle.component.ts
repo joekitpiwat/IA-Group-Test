@@ -26,7 +26,7 @@ export class TriangleComponent implements OnInit {
   async onSubmit() {
     
     if(this.form.invalid){
-      return this.form.markAllAsTouched();
+      return this.form.markAllAsTouched(); //test
     };
     const body: Triangle = this.form.value;
     const res = await this.postService.CalTriangle(body);
